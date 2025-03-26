@@ -1,0 +1,499 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --white-color: #ffffff;
+  --primary-color: #000000;
+  --btn-color: #ffcc41;
+  --text-color: #6f6f6f;
+  --sec-btn-color: #fb8053;
+  --third-btn-color: #a9de74;
+  --border-color: #e8e8e8;
+  --light-blue: #edf9f9;
+
+  --container-width-lg: 79%;
+  --container-width-md: 88%;
+  --container-width-sm: 93%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  color: #000;
+}
+
+html {
+  font-family: Poppins, "sans-serif";
+  font-size: 82.5%;
+}
+body {
+  /* padding: 2rem; */
+  overflow-x: hidden;
+}
+
+/* =================reuseable styles=================== */
+.container {
+  width: var(--container-width-lg);
+  max-width: 1800px;
+  margin-inline: auto;
+}
+section {
+  margin-top: 8rem;
+  width: 100vw;
+}
+header {
+  padding-inline: 2rem;
+}
+
+/* =================NavBar=================== */
+.nav__flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 2rem;
+}
+.nav__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  gap: 20rem;
+  font-weight: 500;
+  font-size: 1.4rem;
+  /* display: none; */
+}
+
+.nav__list {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+.nav__item a {
+  position: relative;
+}
+.nav__item a::before {
+  content: "";
+  width: 100%;
+  height: 0.2rem;
+  background-color: #000;
+  position: absolute;
+  top: -0.5rem;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.nav__item a:hover::before {
+  transform: scaleX(1);
+  transition: transform 0.5s;
+}
+
+.nav__item a::after {
+  content: "";
+  width: 100%;
+  height: 0.2rem;
+  background-color: #000;
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+.nav__item a:hover::after {
+  transform: scaleX(1);
+  transition: transform 0.5s;
+}
+.nav__cta {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.menu__icon {
+  width: 6rem;
+  height: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-self: flex-end;
+  cursor: pointer;
+  display: none;
+}
+
+.line {
+  width: 100%;
+  height: 0.4rem;
+  background: #000;
+  transition: transform 0.5s;
+}
+.line__1 {
+  transform-origin: right;
+}
+.line__2 {
+  transform-origin: left;
+}
+.menu__icon:hover .line {
+  transform: scaleX(0.5);
+}
+
+/* ===========================sidebar styling================= */
+.sidebar {
+  /* display: none; */
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -50rem;
+  width: 50rem;
+  height: 100vh;
+  background-color: var(--white-color);
+  z-index: 100;
+  transition: right 0.5s cubic-bezier(1, 0, 0, 1);
+}
+.sidebar i {
+  position: absolute;
+  top: 2rem;
+  right: 5rem;
+  font-size: 5rem;
+  color: #555;
+  cursor: pointer;
+}
+.navigate.sidebar {
+  right: 0;
+}
+.sidebar__nav__list {
+  display: flex;
+  gap: 5rem;
+  flex-direction: column;
+}
+.sidebar-nav {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: height 0.5s;
+}
+.sidebar__nav__item a {
+  font-size: 4rem;
+  text-align: left;
+  position: relative;
+}
+.sidebar__nav__item a::before {
+  content: "";
+  width: 100%;
+  height: 0.2rem;
+  background-color: #000;
+  position: absolute;
+  top: -0.5rem;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.sidebar__nav__item {
+  display: flex;
+  white-space: nowrap;
+}
+.sidebar__nav__item a:hover::before {
+  transform: scaleX(1);
+  transition: transform 0.5s;
+}
+
+.sidebar__nav__item a::after {
+  content: "";
+  width: 100%;
+  height: 0.2rem;
+  background-color: #000;
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+.sidebar__nav__item a:hover::after {
+  transform: scaleX(1);
+  transition: transform 0.5s;
+}
+/* ==================================HEADER======================== */
+
+.swiper {
+  width: 100%;
+  /* height: 50%; */
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: contain;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 75vh;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-top: 2rem;
+}
+
+.bg__header {
+  position: relative;
+}
+.bg__content {
+  position: absolute;
+  top: 120px;
+  right: 0;
+  z-index: 10;
+}
+.bg__content h2 {
+  color: var(--white-color);
+  font-size: 4.5rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  width: 50%;
+  letter-spacing: 5px;
+}
+.bg__input {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 40px;
+  border-radius: 10px;
+}
+.input__container {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+.input__container select {
+  width: 37%;
+  padding: 1.5rem;
+  border: none;
+  outline: none;
+  font-size: 1.6rem;
+}
+
+.search__btn button {
+  width: 20rem;
+  height: 4.4rem;
+  cursor: pointer;
+  background-color: var(--btn-color);
+  font-size: 1.6rem;
+  border: none;
+  letter-spacing: 0.1rem;
+  color: var(--primary-color);
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+.search__btn button:hover {
+  background: transparent;
+  border: 1px solid var(--btn-color);
+  color: var(--btn-color);
+  transition: all 0.5s 0.3s;
+}
+
+/* =====================PROPERTY SECTION================ */
+.property__header h2 {
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  width: 35%;
+  margin-bottom: 2rem;
+}
+
+.property__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-content: center;
+  align-items: start;
+  gap: 1.8rem;
+}
+
+.property__grid__item img {
+  width: 100%; /* Makes sure the image fits inside the container */
+  height: auto; /* Maintains aspect ratio */
+  display: block; /* Removes any default spacing issues */
+  border-radius: 8px; /* Optional: For rounded corners */
+}
+.property__type {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.property__type {
+  margin-bottom: 1.2rem;
+}
+.property__type p {
+  font-size: 1.4rem;
+}
+.property__type i {
+  font-size: 1.4rem;
+  color: rgb(251, 128, 83);
+}
+.property__details__heading {
+  border-bottom: 1px solid var(--border-color);
+  padding-block: 1.7rem;
+}
+.property__details__heading h2 {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+.property__details__heading p {
+  font-size: 1.3rem;
+  color: var(--text-color);
+}
+.property__pricing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 1.6rem;
+}
+.property__pricing__icons {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+.property__pricing__price p {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+.property__pricing__icons p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.property__pricing__icons i {
+  font-size: 1.5rem;
+  color: var(--sec-btn-color);
+}
+.property__relative {
+  position: relative;
+}
+.property__absolute {
+  position: absolute;
+  top: 30px;
+  left: 0;
+}
+.property__absolute button {
+  width: 7rem;
+  height: 2.2rem;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-family: Poppins, sans-serif;
+  white-space: nowrap;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+.property__cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block: 6rem;
+}
+.property__cta button {
+  width: 20rem;
+  height: 5rem;
+  font-size: 1.5rem;
+  border: none;
+  text-transform: capitalize;
+  background-color: var(--sec-btn-color);
+  color: var(--white-color);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.property__cta button:hover {
+  background-color: transparent;
+  transition: all 0.5s;
+  border: 1px solid var(--sec-btn-color);
+  color: var(--sec-btn-color);
+}
+@media (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+  .swiper-slide img {
+    /* height: 100vh; */
+  }
+  .bg__content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 50vh;
+  }
+  .bg__input {
+    padding: 13px;
+  }
+  .input__container select {
+    padding: 0.8rem;
+  }
+  .search__btn button {
+    height: 3.567rem;
+  }
+  .property__grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (max-width: 800px) {
+  html {
+    font-size: 45%;
+  }
+  .nav__container {
+    display: none;
+  }
+  .menu__icon {
+    display: flex;
+  }
+  .container {
+    width: var(--container-width-md);
+  }
+  .property__grid {
+    grid-template-columns: 1fr;
+  }
+  .property__header h2 {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 45%;
+  }
+  .bg__content {
+    top: 90px;
+  }
+  .bg__content h2 {
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .input__container {
+    flex-direction: column;
+  }
+  .input__container select {
+    width: 100%;
+  }
+  .bg__content {
+    top: 150px;
+  }
+  .bg__content h2 {
+    font-size: 6rem;
+  }
+  .bg__input {
+    padding: 30px;
+  }
+  .input__container select {
+    padding: 3.5rem;
+  }
+  .search__btn button {
+    height: 5rem;
+    width: 35.2rem;
+  }
+}
