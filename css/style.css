@@ -33,6 +33,16 @@ body {
   overflow-x: hidden;
 }
 
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* background-color: transparent; */
+  /* border: 1px solid #ccc; */
+  /* padding: 8px;
+  font-size: 16px; */
+}
+
 /* =================reuseable styles=================== */
 .container {
   width: var(--container-width-lg);
@@ -451,7 +461,7 @@ header {
     display: flex;
   }
   .container {
-    width: var(--container-width-md);
+    width: var(--container-width-sm);
   }
   .property__grid {
     grid-template-columns: 1fr;
@@ -459,6 +469,9 @@ header {
   .property__header h2 {
     width: 100%;
     text-align: center;
+  }
+  .bg__content {
+    padding-inline-start: 2rem;
   }
 }
 
